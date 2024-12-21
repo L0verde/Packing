@@ -7,6 +7,7 @@ I want to help **owners** organize packing items.
 The will be grouped into **containers**, **categories**, and **subcategories** with detailed information about each **item**.
 
 # Schema 
+![Diagram of the Schema below](packing.png)
 ## Entities
 * Profiles -- e.g. jakobloverde@proton.me - _One to One_ with Owners
 * Owners -- e.g. Jakob - _One to Many_
