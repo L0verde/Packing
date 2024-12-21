@@ -43,25 +43,25 @@ _A -> B exist if, for every value of A, there is EXACTLY one corresponding B_
 
 ## Relationships
 1. Profiles <-> Owners (One-to-One)
-   ∀p∈Profiles,∃!o∈Owners : Profiles.owner_id = Owners.owner_id
-   _For every profile p in the set of Profiles, there exists exactly one owner o in the set of Owners where Profiles.owner_id == Owners.owner_id._
+   * ∀p∈Profiles,∃!o∈Owners : Profiles.owner_id = Owners.owner_id
+   * _For every profile p in the set of Profiles, there exists exactly one owner o in the set of Owners where Profiles.owner_id == Owners.owner_id._
 
 2. Owners -> Containers (One-to-Many)
-   ∀o∈Owners,∃c∈Containers : Containers.owner_id = Owners.owner_id
-   _For every owner o in the set of Owners, there exists one or more containers c in the set of Containers such that Containers.owner_id == Owners.owner_id._
+   * ∀o∈Owners,∃c∈Containers : Containers.owner_id = Owners.owner_id
+   * _For every owner o in the set of Owners, there exists one or more containers c in the set of Containers such that Containers.owner_id == Owners.owner_id._
 
 3. Containers -> Categories (One-to-Many)
-   ∀c∈Containers,∃d∈Categories : Categories.container_id = Containers.container_id
-   _For every container c in the set of Containers, there exists one or more categories d in the set of Categories such that Categories.container_id == Containers.container_id._
+   * ∀c∈Containers,∃d∈Categories : Categories.container_id = Containers.container_id
+   * _For every container c in the set of Containers, there exists one or more categories d in the set of Categories such that Categories.container_id == Containers.container_id._
 
 4. Categories -> Subcategories (One-to-Many)
-   ∀c∈Categories,∃s∈Subcategories : Subcategories.category_name = Categories.category_name
-   _For every category c in the set of Categories, there exists one or more subcategories s in the set of Subcategories such that Subcategories.category_name == Categories.category_name._
+   * ∀c∈Categories,∃s∈Subcategories : Subcategories.category_name = Categories.category_name
+   * _For every category c in the set of Categories, there exists one or more subcategories s in the set of Subcategories such that Subcategories.category_name == Categories.category_name._
 
 5. Subcategories -> Items (One-to-Many)
-   ∀s∈Subcategories,∃i∈Items : Items.subcategory_name = Subcategories.subcategory_name
-   _For every subcategory s in the set of Subcategories, there exists one or more items i in the set of Items such that Items.subcategory_name == Subcategories.subcategory_name._
+   * ∀s∈Subcategories,∃i∈Items : Items.subcategory_name = Subcategories.subcategory_name
+   * _For every subcategory s in the set of Subcategories, there exists one or more items i in the set of Items such that Items.subcategory_name == Subcategories.subcategory_name._
 
 6. Items <-> Owners (Many-to-Many)
-   ∀i∈Items,∃o∈Owners : (owner_id, item_id) ∈ Owner_Items where Owner_Items ⊆ Owners.owner_id × Items.item_id
-   _For every item i in the set of Items, there exists one or more owners o in the set of Owners such that (owner_id, item_id) ∈ Owner_Items, where Owner_Items is a subset of all possible pairs of Owners.owner_id and Items.item_id._
+   * ∀i∈Items,∃o∈Owners : (owner_id, item_id) ∈ Owner_Items where Owner_Items ⊆ Owners.owner_id × Items.item_id
+   * _For every item i in the set of Items, there exists one or more owners o in the set of Owners such that (owner_id, item_id) ∈ Owner_Items, where Owner_Items is a subset of all possible pairs of Owners.owner_id and Items.item_id._
